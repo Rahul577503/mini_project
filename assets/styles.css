@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior-x: none;
+}
+
+body {
+  background: #F5F8F4;
+  color: #67575D;
+  font-family: font-family:'DM Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  background-color: #0e1630;
+}
+
+.main {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1400px;
+  width: 90%;
+  min-height: 80vh;
+  height: 70%;
+  background: #fff;
+  box-shadow: 0px 6px 10px 5px rgba(0, 0, 0, 0.643);
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100%;
+  padding: 50px 0px 50px 30px;
+  background: #368f96;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.sidebar img:hover {
+  opacity: 0.3;
+  color: blueviolet;
+}
+
+.sidebar img:visited {
+  color: red;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px;
+  width: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding: 1rem 10rem 0 5rem;
+}
+
+.content img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+
+}
+.content img:hover{
+  opacity: 0.9;
+  box-shadow: 0 10px 10px rgba(255, 255, 255, 0.62);
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  color: var(--yellow);
+  letter-spacing: 0.2rem;
+  background: linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)), linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+  background-size: 100% 5px, 0 5px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+  margin-bottom:1rem;
+}
+.home-content p{
+  margin-top: 2rem;
+  color: gray;
+  font-size:1.2rem;
+  font-weight: 400;
+}
+.home-content h1:hover {
+  background-size: 0 5px, 50% 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+
+.text-container {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.text {
+  position: absolute;
+  color: orange;
+  font-size: 1.5rem;
+  visibility: visible;
+}
+
+
+li {
+  margin-bottom:0.5rem;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: hotpink;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.432);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+  color: red;
+}
+
+@media (max-width:900px) {
+  .container {
+    overflow-x: auto;
+    flex-direction: column;
+    overscroll-behavior-x: none;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .sidebar ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebar li {
+    margin: 0;
+  }
+
+  .sidebar li:before {
+    content: "";
+    margin: 0;
+  }
+
+  .content {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .home-content {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .btn_container .btn a {
+    font-size: 0.5rem;
+    gap: 2rem;
+  }
+  .color-switcher {
+    position: static; /* Change position to static */
+    margin-top: 6rem; /* Add margin to separate from content */
+    text-align: center; /* Center the button */
+  }
+}
+
+/*css for color switcher */
+.color-switchable.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
+#toggle-color {
+  background-color:red;
+  border: none;
+  padding: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+}
+
+.color-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
